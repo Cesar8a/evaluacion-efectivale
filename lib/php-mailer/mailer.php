@@ -102,10 +102,10 @@ $mail->Host = "smtp.uservers.net"; //SMTP server
 //$mail->SMTPDebug  = 2; //Enables SMTP debug information (for testing) 1 = errors and messages 2 = messages only
 $mail->SMTPAuth = true; //Enable SMTP authentication
 $mail->Port = 587; //Set the SMTP port for the GMAIL server
-$mail->Username = "cesar@legix.com.mx"; //SMTP account username
-$mail->Password = "go2work1"; //SMTP account password
-$mail->SetFrom("alerta@legix.com.mx", "Alertas Name"); // Correo y Nombre del Remitente
-$mail->AddAddress("cesar8a.upiicsa@gmail.com","Cesar Ochoa Aguirre"); // Agrega correo destinatario
+$mail->Username = "Cuenta de correo"; //SMTP account username
+$mail->Password = "Contraseña de la cuenta"; //SMTP account password
+$mail->SetFrom("Cuenta de correo", "Alertas Name"); // Correo y Nombre del Remitente
+$mail->AddAddress("Cuenta de correo","Cesar Ochoa Aguirre"); // Agrega correo destinatario
 $mail->Subject = $emailSubject; // Asunto del mensaje
 $mail->CharSet = "ISO-8859-1";
 $mail->MsgHTML($message);

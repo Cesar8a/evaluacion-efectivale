@@ -11,7 +11,7 @@
  Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 18/11/2022 09:14:18
+ Date: 18/11/2022 16:07:18
 */
 
 SET NAMES utf8mb4;
@@ -38,6 +38,29 @@ INSERT INTO `access` VALUES (1, 'Leer menús', 'active', '2022-11-16', '11:03:46
 INSERT INTO `access` VALUES (2, 'Agregar menús', 'active', '2022-11-16', '11:03:46', 1);
 INSERT INTO `access` VALUES (3, 'Actualizar menús', 'active', '2022-11-16', '11:03:46', 1);
 INSERT INTO `access` VALUES (4, 'Eliminar menús', 'active', '2022-11-16', '11:03:46', 1);
+
+-- ----------------------------
+-- Table structure for contact
+-- ----------------------------
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE `contact`  (
+  `ID_contact` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Lastname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Status` enum('active','inactive') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'active',
+  `Date` date NULL DEFAULT curdate,
+  `Time` time(0) NULL DEFAULT curtime,
+  `ID_users` int(11) NULL DEFAULT 1,
+  PRIMARY KEY (`ID_contact`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of contact
+-- ----------------------------
+INSERT INTO `contact` VALUES (1, 'Cesar', 'Ochoa', 'cochoa@hotmail.com', '5539298561', 'active', '2022-11-18', '14:14:12', 1);
+INSERT INTO `contact` VALUES (2, 'Cesar', 'Ochoa', 'cochoa3@hotmail.com', '5539298561', 'active', '2022-11-16', '14:14:12', 1);
 
 -- ----------------------------
 -- Table structure for menus
@@ -145,6 +168,6 @@ CREATE TABLE `users`  (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (1, 'Cesar', 'Ochoa', 'Aguirre', 'cochoa@hotmail.com', 'Desarrollo', 'Hombre', '5539298561', '126', 'cesar8a', '12345', 1, 'active', '2022-11-16', '14:49:12', 1);
-INSERT INTO `users` VALUES (2, 'Cesar2', 'Ochoa2', 'Aguirre2', 'cochoa2@hotmail.com', 'Desarrollo2', 'Mujer', '5539298562', '2', 'cochoa', '12345', 2, 'active', '2022-11-16', '14:49:12', 1);
+INSERT INTO `users` VALUES (2, 'Cesar', 'Ochoa', 'Aguirre', 'cochoa3@hotmail.com', 'Desarrollo', 'Hombre', '5539298561', '126', 'cochoa', '12345', 2, 'active', '2022-11-16', '14:49:12', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
