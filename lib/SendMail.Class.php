@@ -9,8 +9,8 @@ class SendMail {
 
 	const host = "smtp.gmail.com";
 	const port = "587";
-	const username = "prueba.portalesdifusion@gmail.com";
-	const password = "gdch572!";
+	const username = "Cuenta de correo";
+	const password = "Contraseña de la cuenta";
 	const charSet = "ISO-8859-1";
 
 	public function setError($_msg){

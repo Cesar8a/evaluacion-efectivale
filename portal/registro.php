@@ -35,8 +35,8 @@ $user = utf8_decode("ANÓNIMO");
 			<img src="img/checkin.png" />
 			<div>
 				<input type="text" id="name" name="name" placeholder="Nombre(s)" required />
-				<input type="text" id="firts_lastname" name="first_lastname" placeholder="Apellido Paterno" required />
-				<input type="text" id="second_lastname" name="second_lastname" placeholder="Apellido Materno" required />
+				<input type="text" id="lastname1" name="lastname1" placeholder="Apellido Paterno" required />
+				<input type="text" id="lastname2" name="lastname2" placeholder="Apellido Materno" required />
 			</div>
 			<div>
 				<input type="email" id="email" name="email" placeholder="Correo Electrónico" required />
@@ -56,6 +56,13 @@ $user = utf8_decode("ANÓNIMO");
 			<div>
 				<input type="text" id="user" name="user" placeholder="Nombre de Usuario" required />
 				<input type="password" id="password" name="password" placeholder="Password" required />
+			</div>
+			<div>
+				<select id="profile" name="profile" required>
+					<option value="">Perfil</option>
+					<option value="1">Administrador</option>
+					<option value="2">Usuario</option>
+				</select>
 			</div>
 			<div>
 				<input type="hidden" id="checkEmail" name="checkEmail" value="0" />

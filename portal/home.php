@@ -53,7 +53,7 @@ if(!Session::sessionUser()){
 	<div class="user">
 		<div class="row">
 			<div class="left">
-				<label>Bienvenido(a): <?php echo $fullName; ?></label>
+				<label>Bienvenido(a): <a class="add" href="javascript:void(0);" onClick="popupShow('pages/add/addUsers.php');"><?=$fullName;?></a></label>
 			</div>
 			<div class="right">
 				<label><a href="pages/logout.php">Cerrar Sesión</a></label>

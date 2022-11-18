@@ -15,14 +15,14 @@ class CheckIn {
 		return $this->errorMsg;
 	}
 
-	public function addCheckIn($_name, $_firstLastname, $_secondLastname, $_email, $_area, $_gender, $_phone, $_extension, $_user, $_password, $_idProfile = "4", $_status = "1"){
+	public function addCheckIn($_name, $_lastname1, $_lastname2, $_email, $_area, $_gender, $_phone, $_extension, $_user, $_password, $_profile, $_status = "1"){
 		$dbConnection = new dbConnection();
 		$lastID = -1;
 
 		$query = "INSERT INTO users (
 						`name`, 
-						`first_lastname`, 
-						`second_lastname`, 
+						`lastname1`, 
+						`lastname2`, 
 						`email`, 
 						`area`, 
 						`gender`, 
@@ -30,12 +30,12 @@ class CheckIn {
 						`extension`, 
 						`user`, 
 						`password`, 
-						`id_profile`, 
+						`ID_profiles`, 
 						`status`
 					) VALUES(
 						'$_name',
-						'$_firstLastname',
-						'$_secondLastname',
+						'$_lastname1',
+						'$_lastname2',
 						'$_email',
 						'$_area',
 						'$_gender',
@@ -43,7 +43,7 @@ class CheckIn {
 						'$_extension',
 						'$_user',
 						'$_password',
-						'$_idProfile',
+						'$_profile',
 						'$_status'
 					)";
 	
@@ -96,22 +96,67 @@ class CheckIn {
 		return $available;
 	}
 
-	/*
-	function dataRecovery($_email){
+	public function readUsersById($_ID_users){
 		$dbConnection = new dbConnection();
-		$recoverData = array();
-	
-		$query = "SELECT user, password FROM users WHERE email = '$_email'";
+		$_data = array();
+
+		$query = "SELECT * FROM `users` WHERE `users`.`ID_users` = $_ID_users";
+
 		$result = $dbConnection->exeQuery($query);
 		$numRows = $dbConnection->getNumRows($result);
-	
+
 		if($numRows > 0){
-			$row = $dbConnection->fetchRows($result);
-			$recoverData = array(utf8_encode($row->usuario), $row->password);
+			while(($row = $dbConnection->fetchRows($result)) != false){
+				array_push(
+					$_data,
+					$row->name,
+					$row->lastname1,
+					$row->lastname2,
+					$row->email,
+					$row->area,
+					$row->gender,
+					$row->phone,
+					$row->extension,
+					$row->user,
+					$row->password,
+					$row->ID_profiles,
+				);
+			}
+
+			$dbConnection->closeResult($result);
 		}
-		$dbConnection->closeResult($result);
-		return $recoverData;
+
+		$dbConnection = null;
+		return $_data;
 	}
-	*/
+
+	public function updateCheckIn($_name, $_lastname1, $_lastname2, $_email, $_area, $_gender, $_phone, $_extension, $_password, $_idUser){
+		$dbConnection = new dbConnection();
+		$update = false;
+
+		$query = "UPDATE `users`
+					SET 
+						`name` = '$_name', 
+						`lastname1` = '$_lastname1', 
+						`lastname2` = '$_lastname2', 
+						`email` = '$_email', 
+						`area` = '$_area',
+						`gender` = '$_gender',
+						`phone` = '$_phone',
+						`extension` = '$_extension',
+						`password` = '$_password'
+					WHERE `ID_users` = '$_idUser'
+					LIMIT 1";
+
+		if(!$dbConnection->exeQuery($query)){
+			$this->setError($dbConnection->getLastError());
+		}else{
+			$update = true;
+		}
+
+		$dbConnection = null;
+		return $update;
+	}
+
 }
 ?>
