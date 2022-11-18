@@ -1,0 +1,279 @@
+/**********************************************************************************************************/
+* {
+margin: 0;
+padding: 0;
+}
+
+*,
+*:after,
+*:before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+body {
+background-image: url(../img/background.png);
+font-family: 'trebuchet ms', verdana, arial;
+font-size: 16px;
+margin: 0;
+padding: 0;
+}
+
+a {
+text-decoration: none;
+}
+
+/**********************************************************************************************************/
+/* Header */
+header {
+	background-color: #347FAE;
+	background-color: transparent;
+display: table;
+padding: 20px 10px 0;
+width: 100%;
+}
+
+header .row {
+display: table-row;
+}
+
+header .cell {
+display: table-cell;
+}
+
+header .cell h1 {
+color: #FFF;
+font-size: 1.5em;
+font-weight: normal;
+text-align: center;
+}
+
+/**********************************************************************************************************/
+/* Iniciar sesión */
+.login {
+padding: 20px 0;
+width: 100%;
+}
+	
+.login form {
+background-color: #FFF;
+border-radius: 10px;
+margin: 0 auto;
+padding: 20px;
+text-align: center;
+width: 35%;
+}
+
+.login form > img:nth-child(1) {
+margin: 5px 0 15px;
+}
+
+.login form input[type="text"],
+.login form input[type="password"],
+.login form input[type="submit"],
+.login form a {
+background-color: #EEE;
+border: none;
+border-radius: 5px;
+font-size: 1em;
+margin: 5px 0 15px;
+min-height: 40px;
+text-align: center;
+width: 100%;
+}
+
+.login form input:focus {
+background-color: #E7E7E7;
+}
+
+.login form input[type="submit"] {
+background-color: #428BCA;
+color: #FFF;
+padding: 10px;
+width: 50%;
+}
+
+.login form input[type="submit"]:hover {
+background-color: #3071A9;
+cursor: pointer;
+}
+
+.login form a {
+background-color: #428BCA;
+color: #FFF;
+display: block;
+margin: 5px auto 10px;
+padding: 10px;
+width: 50%;
+}
+
+.login form a:hover {
+background-color: #3071A9;
+}
+
+.login form .loading {
+padding-top: 10px;
+}
+
+.login form .message {
+background-color: #F5BBB8;
+border: 2px solid #C72500;
+border-radius: 5px;
+margin: 20px auto;
+padding: 10px 20px;
+width: 75%;
+}
+
+.login form .message h1 {
+color: #C72500;
+font-size: 1.25em;
+text-align: center;
+}
+
+/**********************************************************************************************************/
+/* Registro */
+.checkIn {
+/* background-color: #CCC; */
+margin: auto;
+padding: 10px;
+width: 75%;
+}
+
+.checkIn form {
+background-color: #FFF;
+border-radius: 10px;
+margin: 0 auto 25px;
+padding: 20px;
+text-align: center;
+width: 95%;
+}
+
+.checkIn form > img:nth-child(1) {
+margin: 5px 0 15px;
+}
+
+.checkIn form input[type=text],
+.checkIn form input[type=email],
+.checkIn form input[type=password],
+.checkIn form input[type=submit],
+.checkIn form select,
+.checkIn form a {
+background-color: #EEE;
+border: none;
+border-radius: 5px;
+font-size: 1em;
+margin: 5px 0 15px;
+min-height: 40px;
+text-align: center;
+width: 30%;
+}
+
+.checkIn form select {
+color: #A9A9A9;
+padding: 0 10px;
+}
+
+.checkIn form input[type="submit"] {
+background-color: #428BCA;
+color: #FFF;
+padding: 10px;
+width: 50%;
+}
+
+.checkIn form input[type="submit"]:hover {
+background-color: #3071A9;
+cursor: pointer;
+}
+
+.checkIn form a {
+background-color: #428BCA;
+color: #FFF;
+display: block;
+margin: 5px auto 10px;
+padding: 10px;
+width: 50%;
+}
+
+.checkIn form a:hover {
+background-color: #3071A9;
+}
+
+.checkIn form .loading {
+padding-top: 10px;
+}
+
+.checkIn form .message {
+background-color: #F5BBB8;
+border: 2px solid #C72500;
+border-radius: 5px;
+margin: 20px auto;
+padding: 10px 20px;
+width: 75%;
+}
+
+.checkIn form .message h1 {
+color: #C72500;
+font-size: 1.25em;
+text-align: center;
+}
+
+/**********************************************************************************************************/
+.invalid input:required:invalid {
+background-color: #BE4C54;
+border: 3px solid #C72500;
+}
+
+.invalid input:required:valid {
+background-color: #DDF4D9;
+border: 3px solid #0B610B;
+}
+
+/**********************************************************************************************************/
+/* Footer */
+footer {
+background-color: #347FAE;
+	background-color: transparent;
+width: 100%;
+height: auto;
+}
+
+footer h3 {
+color: #FFF;
+font-size: 1.25em;
+font-weight: normal;
+padding: 10px;
+text-align: center;
+}
+
+/**********************************************************************************************************/
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+	.login h1 {
+	width: 55%;
+	}
+
+	.login form {
+	width: 55%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.login h1 {
+	width: 75%;
+	}
+
+	.login form {
+	width: 75%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.login h1 {
+	width: 95%;
+	}
+
+	.login form {
+	width: 95%;
+	}
+}

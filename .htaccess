@@ -1,0 +1,9 @@
+# Habilitando Rewriting
+# RewriteEngine on
+
+# Impedimos el acceso al archivo index.php
+# RewriteCond %{THE_REQUEST} ^.*/index\.php
+# RewriteRule ^index\.php - [F]
+
+# Impedimos el acceso a las carpetas
+Options -Indexes
